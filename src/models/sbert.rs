@@ -36,8 +36,6 @@ where
         let config_file = model_dir.join("config.json");
         let weights_file = model_dir.join("model.ot");
         let vocab_file = model_dir.join("vocab.txt");
-        
-        println!("PATH {:?} {:?} {:?}", root, model_dir, config_file);
 
         // Set-up DistilBert model and tokenizer
 
