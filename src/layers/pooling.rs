@@ -21,10 +21,10 @@ pub struct Pooling {
 
 impl Pooling {
     pub fn new<P: Into<PathBuf>>(root: P) -> Pooling {
-        let pooling_dir = root.into().join("1_Pooling");
+        let pooling_dir = root.into();
         log::info!("Loading conf {:?}", pooling_dir);
 
-        let config_file = pooling_dir.join("config.json");
+        let config_file = pooling_dir.join("config_pooling.json");
         let _conf = PoolingConfig::from_file(&config_file);
 
         Pooling { _conf }
