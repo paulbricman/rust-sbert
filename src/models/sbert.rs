@@ -35,6 +35,8 @@ where
         let config_file = root.join("config.json");
         let weights_file = root.join("model.ot");
         let vocab_file = root.join("vocab.txt");
+        
+        println!("{:?} {:?} {:?}", config_file, weights_file, vocab_file);
 
         // Set-up DistilBert model and tokenizer
 
