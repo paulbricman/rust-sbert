@@ -30,7 +30,7 @@ pub struct Dense {
 
 impl Dense {
     pub fn new<P: Into<PathBuf>>(root: P) -> Result<Dense, Error> {
-        let dense_dir = root.into().join("2_Dense");
+        let dense_dir = root.into();
         log::info!("Loading conf {:?}", dense_dir);
 
         let device = Device::cuda_if_available();
@@ -43,8 +43,8 @@ impl Dense {
             bias: true,
         };
 
-        let config_file = dense_dir.join("config.json");
-        let weights_file = dense_dir.join("model.ot");
+        let config_file = dense_dir.join("config_dense.json");
+        let weights_file = dense_dir.join("model_dense.ot");
 
         let conf = DenseConfig::from_file(&config_file);
         let linear = nn::linear(
