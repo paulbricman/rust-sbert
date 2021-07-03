@@ -31,11 +31,10 @@ where
         P: Into<PathBuf>,
     {
         let root = root.into();
-        let model_dir = root.join("0_DistilBERT");
 
-        let config_file = model_dir.join("config.json");
-        let weights_file = model_dir.join("model.ot");
-        let vocab_file = model_dir.join("vocab.txt");
+        let config_file = root.join("config.json");
+        let weights_file = root.join("model.ot");
+        let vocab_file = root.join("vocab.txt");
 
         // Set-up DistilBert model and tokenizer
 
